@@ -1,12 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-
-mongoose.connect(keys.mongoURI, {
-  useMongoClient: true
-});
 
 const app = express();
 
