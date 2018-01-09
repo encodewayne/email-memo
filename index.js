@@ -14,8 +14,8 @@ app.use(
   })
 );
 
-app.get('/api/hi', (req, res) => {
-  res.send({ hi: 'hi' });
+app.get('/api/envs', (req, res) => {
+  res.send({ 'process.env': process.env });
 });
 
 if (process.env.NODE_ENV === 'production') {
