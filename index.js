@@ -14,15 +14,18 @@ app.use(
   })
 );
 
-app.use(express.static('static'));
-
-const path = require('path');
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'static', 'index.html'));
+app.get('/api/hi', (req, res) => {
+  res.send({ hi: 'hi' });
 });
 
-const PORT = keys.PORT;
-app.listen(PORT);
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 
-console.log('Server started at port: ' + PORT);
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+app.listen(keys.PORT);
+
+console.log('Server started at port: ' + keys.PORT);
