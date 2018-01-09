@@ -18,6 +18,8 @@ app.get('/api/envs', (req, res) => {
   res.send({ 'process.env': process.env });
 });
 
+require('./routes/emailRoutes')(app);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
