@@ -3,7 +3,6 @@ const Path = require('path-parser');
 const { URL } = require('url');
 
 const Mailer = require('../services/Mailer');
-const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 module.exports = app => {
   app.post('/api/email', async (req, res) => {

@@ -1,18 +1,10 @@
 const express = require('express');
-const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
 const app = express();
 
 app.use(bodyParser.json());
-
-app.use(
-  cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
-  })
-);
 
 app.get('/api/envs', (req, res) => {
   res.send({ 'process.env': process.env });
