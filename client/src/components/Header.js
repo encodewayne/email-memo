@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 
 export default class Header extends Component {
   render() {
-    return <h3>Header</h3>;
+    return (
+      <nav className="light-green">
+        <div className="nav-wrapper">
+          <a href="#" className="brand-logo center">
+            Email-Memo
+          </a>
+        </div>
+      </nav>
+    );
   }
 }
