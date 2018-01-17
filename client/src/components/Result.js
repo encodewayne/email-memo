@@ -5,16 +5,22 @@ import { Link } from 'react-router-dom';
 class Result extends Component {
   helper() {
     //console.log(this.props.message);
-    if (this.props.message && this.props.message.success === true)
+    if (!this.props.message)
       return (
         <div className="alert alert-info center-align" role="alert">
-          Well done! You are a cat now!
+          Please wait a second...
+        </div>
+      );
+    else if (this.props.message.success === true)
+      return (
+        <div className="alert alert-success center-align" role="alert">
+          The email is sent successfully!'
         </div>
       );
     else
       return (
-        <div className="alert alert-info center-align" role="alert">
-          {'Oops! Something wrong happens...'}
+        <div className="alert alert-danger center-align" role="alert">
+          Oops! Something wrong happens...
         </div>
       );
   }
