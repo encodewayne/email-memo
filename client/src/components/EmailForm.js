@@ -1,7 +1,7 @@
 // EmailForm shows a form for a user to add input
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 import EmailField from './EmailField';
 import _ from 'lodash';
@@ -38,8 +38,11 @@ class EmailForm extends Component {
         <div id="form" className="col s6 offset-s3">
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             {this.renderFields()}
-            <button type="submit" className="teal btn-flat right white-text">
-              Submit <i className="material-icons right"> done</i>
+            <button
+              type="submit"
+              className="light-blue darken-4 btn-flat right white-text"
+            >
+              Submit<i className="material-icons right"> done</i>
             </button>
           </form>
         </div>
