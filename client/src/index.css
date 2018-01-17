@@ -5,3 +5,11 @@ body {
 #form {
   margin-top: 100px;
 }
+
+#memo-input {
+  font-size: 1.6em;
+}
+
+.memo-input-error {
+  margin-bottom: 20px
+}
