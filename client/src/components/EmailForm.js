@@ -55,10 +55,12 @@ function validate(values) {
   const errors = {};
 
   _.each(formFields, ({ name }) => {
-    if (!values[name]) errors[name] = 'You must provide a ' + name;
+    if (!values[name] || (values[name] && values[name].trim() === ''))
+      errors[name] = 'You must provide a ' + name;
   });
 
-  errors.recipients = validateEmails(values.recipients || '');
+  if (!errors.recipients)
+    errors.recipients = validateEmails(values.recipients || '');
   return errors;
 }
 
