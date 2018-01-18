@@ -14,7 +14,7 @@ class Result extends Component {
     else if (this.props.message.success === true)
       return (
         <div className="alert alert-success center-align" role="alert">
-          The email is sent successfully!'
+          The email is sent successfully!
         </div>
       );
     else
